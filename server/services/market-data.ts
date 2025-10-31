@@ -2,7 +2,7 @@ import yahooFinance from 'yahoo-finance2';
 
 export async function getCurrentPrice(symbol: string) {
   try {
-    const quote = await yahooFinance.quote(symbol, {}, { validateResult: false });
+    const quote = await yahooFinance.quote(symbol);
     
     return {
       symbol: quote.symbol,
@@ -28,7 +28,7 @@ export async function getHistoricalData(symbol: string, period: string = '1mo') 
       period2: new Date(),
     };
     
-    const result = await yahooFinance.historical(symbol, queryOptions, { validateResult: false });
+    const result = await yahooFinance.historical(symbol, queryOptions);
     
     return result.map((item: any) => ({
       date: item.date.toISOString().split('T')[0],
