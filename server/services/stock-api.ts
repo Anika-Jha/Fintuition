@@ -13,7 +13,7 @@ interface ProviderResult<T> {
 // Yahoo Finance implementation
 async function fetchFromYahoo(symbol: string): Promise<StockData | null> {
   try {
-    const quote = await yahooFinance.quote(symbol);
+    const quote = await (yahooFinance.quote as any)(symbol);
     
     if (!quote || !quote.regularMarketPrice) {
       return null;
@@ -62,7 +62,7 @@ async function fetchHistoricalFromYahoo(symbol: string, period: string): Promise
         startDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
     }
 
-    const result = await yahooFinance.chart(symbol, {
+    const result = await (yahooFinance.chart as any)(symbol, {
       period1: startDate,
       period2: now,
       interval: period === '1D' ? '1h' : '1d',

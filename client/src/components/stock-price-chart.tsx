@@ -1,47 +1,33 @@
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { APIStatusBadge, type APIProvider, type APIStatus } from "./api-status-badge";
+import type { HistoricalPrice } from "@shared/schema";
 
 const timePeriods = ["1D", "1W", "1M", "3M", "1Y"] as const;
 type TimePeriod = typeof timePeriods[number];
 
 interface StockPriceChartProps {
   symbol?: string;
+  data?: HistoricalPrice[];
   apiProvider?: APIProvider;
   apiStatus?: APIStatus;
+  onPeriodChange?: (period: string) => void;
+  currentPeriod?: string;
 }
-
-//todo: remove mock functionality
-const generateMockData = (period: TimePeriod) => {
-  const basePrice = 100;
-  const dataPoints = period === "1D" ? 24 : period === "1W" ? 7 : period === "1M" ? 30 : period === "3M" ? 90 : 252;
-  
-  return Array.from({ length: dataPoints }, (_, i) => {
-    const volatility = 0.02;
-    const trend = 0.0001;
-    const randomWalk = (Math.random() - 0.5) * volatility;
-    const price = basePrice * (1 + trend * i + randomWalk);
-    
-    return {
-      date: new Date(Date.now() - (dataPoints - i) * 24 * 60 * 60 * 1000).toLocaleDateString(),
-      price: parseFloat(price.toFixed(2)),
-    };
-  });
-};
 
 export function StockPriceChart({ 
   symbol = "AAPL", 
+  data = [],
   apiProvider = "Mock Data",
-  apiStatus = "active" 
+  apiStatus = "active",
+  onPeriodChange,
+  currentPeriod = "1M"
 }: StockPriceChartProps) {
-  const [selectedPeriod, setSelectedPeriod] = useState<TimePeriod>("1M");
-  const [data] = useState(generateMockData(selectedPeriod));
-
   const handlePeriodChange = (period: TimePeriod) => {
-    setSelectedPeriod(period);
-    console.log(`Period changed to ${period}`);
+    if (onPeriodChange) {
+      onPeriodChange(period);
+    }
   };
 
   return (
@@ -57,7 +43,7 @@ export function StockPriceChart({
           {timePeriods.map((period) => (
             <Button
               key={period}
-              variant={selectedPeriod === period ? "default" : "outline"}
+              variant={currentPeriod === period ? "default" : "outline"}
               size="sm"
               onClick={() => handlePeriodChange(period)}
               className="text-xs"
