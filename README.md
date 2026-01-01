@@ -4,30 +4,30 @@ A modern, AI-driven financial dashboard that combines real-time market data, AI-
 
 ## Features
 
-### 📊 Market Dashboard
+###  Market Dashboard
 - **Real-time stock prices** with live updates from Yahoo Finance
 - **Interactive price charts** with historical data visualization
 - **Technical indicators**: RSI, Moving Averages (SMA 20/50), Bollinger Bands
 - **Quick access** to popular stocks (AAPL, MSFT, GOOGL, AMZN, TSLA, NVDA)
 
-### 🤖 AI-Powered Insights
+###  AI-Powered Insights
 - **Price Forecasting**: OpenAI-powered 30-day price predictions with confidence scores
 - **Sentiment Analysis**: AI-driven market sentiment from news and trends
 - **Trade Alerts**: Intelligent buy/sell/hold recommendations based on AI analysis
 - **Trend Detection**: Bullish, bearish, or neutral market trend identification
 
-### 💼 Portfolio Management
+###  Portfolio Management
 - **Track holdings** with real-time valuation
 - **Performance metrics**: Total value, gains/losses, and percentage changes
 - **Easy management**: Add, view, and remove portfolio holdings
 - **Live price updates** for all portfolio symbols
 
-### 📈 Options Pricing
+###  Options Pricing
 - **Black-Scholes calculator** for call and put options
 - **The Greeks**: Delta, Gamma, Theta, Vega, and Rho calculations
 - **Customizable inputs**: Strike price, volatility, days to expiry, risk-free rate
 
-### 🎨 Beautiful UI/UX
+###  UI/UX
 - **Light & Dark mode** with smooth transitions
 - **Responsive design** optimized for desktop and mobile
 - **Professional interface** inspired by Bloomberg Terminal and TradingView
