@@ -1,4 +1,4 @@
-# Fintuition - AI-Powered Trading Dashboard
+# Fintuition : AI-Powered Trading Dashboard
 
 A modern, AI-driven financial dashboard that combines real-time market data, AI-powered forecasting, sentiment analysis, and portfolio tracking.
 
