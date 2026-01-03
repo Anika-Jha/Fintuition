@@ -22,7 +22,7 @@ A modern, AI-driven financial dashboard that combines real-time market data, AI-
 - **Easy management**: Add, view, and remove portfolio holdings
 - **Live price updates** for all portfolio symbols
 
-###  Options Pricing
+###  Options Pricing(working demo)
 - **Black-Scholes calculator** for call and put options
 - **The Greeks**: Delta, Gamma, Theta, Vega, and Rho calculations
 - **Customizable inputs**: Strike price, volatility, days to expiry, risk-free rate
