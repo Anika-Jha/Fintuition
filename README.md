@@ -22,7 +22,7 @@ A modern, AI-driven financial dashboard that combines real-time market data, AI-
 - **Easy management**: Add, view, and remove portfolio holdings
 - **Live price updates** for all portfolio symbols
 
-###  Options Pricing(working demo)
+###  Options Pricing (working demo)
 - **Black-Scholes calculator** for call and put options
 - **The Greeks**: Delta, Gamma, Theta, Vega, and Rho calculations
 - **Customizable inputs**: Strike price, volatility, days to expiry, risk-free rate
@@ -47,7 +47,7 @@ A modern, AI-driven financial dashboard that combines real-time market data, AI-
 ### Backend
 - **Express.js** API server
 - **Yahoo Finance API** for market data
-- **OpenAI GPT-5** for AI predictions and sentiment analysis
+- **OpenAI GPT-5** for AI predictions and sentiment analysis (open AI api key required)
 - **In-memory storage** for portfolio and alerts
 
 ## Getting Started
